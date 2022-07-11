@@ -1,5 +1,14 @@
 function fibonacci(num) {
   // type your code here
+  if (num < 2) return num;
+
+  let prevTwo = [0, 1];
+  for (let i = 0; i < num - 1; i++) {
+    const sum = prevTwo[0] + prevTwo[1];
+    prevTwo = [prevTwo[1], sum];
+  };
+
+  return prevTwo[1];
 }
 
 if (require.main === module) {
